@@ -1,0 +1,13 @@
+http://in.mathworks.com/matlabcentral/fileexchange/36281-wavelet-transform-for-image-coding
+
+http://www.mathworks.com/matlabcentral/fileexchange/38300-pca-and-ica-package
+
+http://www.bsp.brain.riken.jp/ICALAB/ICALABImageProc/
+
+http://www.mathworks.com/matlabcentral/fileexchange/29049-wavelet-decomposition-for-images
+
+http://in.mathworks.com/matlabcentral/newsreader/view_thread/270467
+
+http://in.mathworks.com/matlabcentral/fileexchange/37950-feature-extraction-using-multisignal-wavelet-transform-decomposition
+
+https://github.com/ignacio-rocco/wavelet3d/blob/master/README.md
