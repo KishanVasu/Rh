@@ -1,0 +1,966 @@
+{\rtf1\ansi\ansicpg932\deff0\deflang1033\deflangfe1041{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset134 SimSun;}{\f2\fnil\fcharset0 SimSun;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\f0\fs22 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\par
+% LaTeX Example: Project Report\par
+%\par
+% Source: {\field{\*\fldinst{HYPERLINK "http://www.howtotex.com"}}{\fldrslt{\ul\cf1 http://www.howtotex.com}}}\f0\fs22\par
+%\par
+% Feel free to distribute this example, but please keep the referral\par
+% to howtotex.com\par
+% Date: March 2011 \par
+% \par
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\par
+% How to use writeLaTeX: \par
+%\par
+% You edit the source code here on the left, and the preview on the\par
+% right shows you the result within a few seconds.\par
+%\par
+% Bookmark this page and share the URL with your co-authors. They can\par
+% edit at the same time!\par
+%\par
+% You can upload figures, bibliographies, custom classes and\par
+% styles using the files menu.\par
+%\par
+% If you're new to LaTeX, the wikibook is a great place to start:\par
+% {\field{\*\fldinst{HYPERLINK "http://en.wikibooks.org/wiki/LaTeX"}}{\fldrslt{\ul\cf1 http://en.wikibooks.org/wiki/LaTeX}}}\f0\fs22\par
+%\par
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\par
+% Edit the title below to update the display in My Documents\par
+%\\title\{Project Report\}\par
+%scrartcl\par
+%%% Preamble\par
+\\documentclass[paper=a4, fontsize=12pt]\{scrartcl\}\par
+%\\documentclass[paper=a4, fontsize=12pt]\{book\}\par
+\\usepackage[T1]\{fontenc\}\par
+\\usepackage\{fourier\}\par
+%added by me\par
+\\usepackage\{ragged2e\}\par
+\\usepackage[sfdefault]\{roboto\}\par
+%\\sectionfont\{\\bfseries\\Large\\raggedright\}\par
+\par
+%\par
+%\\usepackage[english]\{babel\}\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab % English language/hyphenation\par
+\\usepackage[protrusion=true,expansion=true]\{microtype\}\tab\par
+\\usepackage\{amsmath,amsfonts,amsthm\} % Math packages\par
+\\usepackage\{graphicx\}\par
+%\\usepackage[pdftex]\{graphicx\}\par
+\\usepackage\{url\}\par
+\\linespread\{1.3\}\par
+%\\graphicspath\{ \{c:/Users/\} \}\par
+%%% Custom sectioning\par
+\\usepackage\{sectsty\}\par
+\\allsectionsfont\{\\centering \\normalfont\\scshape\}\par
+\\usepackage[colorinlistoftodos]\{todonotes\}\par
+\par
+%%% Custom headers/footers (fancyhdr package)\par
+\\usepackage\{fancyhdr\}\par
+\\pagestyle\{fancyplain\}\par
+\\fancyhead\{\}\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab % No page header\par
+\\fancyfoot[L]\{\}\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab % Empty \par
+\\fancyfoot[C]\{\}\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab % Empty\par
+\\fancyfoot[R]\{\\thepage\}\tab\tab\tab\tab\tab\tab\tab\tab\tab % Pagenumbering\par
+\\renewcommand\{\\headrulewidth\}\{0pt\}\tab\tab\tab % Remove header underlines\par
+\\renewcommand\{\\footrulewidth\}\{0pt\}\tab\tab\tab\tab % Remove footer underlines\par
+\\setlength\{\\headheight\}\{13.6pt\}\par
+\par
+\par
+%%% Equation and float numbering\par
+\\numberwithin\{equation\}\{section\}\tab\tab % Equationnumbering: section.eq#\par
+\\numberwithin\{figure\}\{section\}\tab\tab\tab % Figurenumbering: section.fig#\par
+\\numberwithin\{table\}\{section\}\tab\tab\tab\tab % Tablenumbering: section.tab#\par
+\par
+\par
+%%% Maketitle metadata\par
+\\newcommand\{\\horrule\}[1]\{\\rule\{\\linewidth\}\{#1\}\} \tab % Horizontal rule\par
+\par
+\\title\{\par
+\tab\tab %\\vspace\{-1in\} \tab\par
+\tab\tab\\usefont\{OT1\}\{bch\}\{b\}\{n\}\par
+\tab\tab %\\normalfont \\normalsize \\textsc\{School of random department names\} \\\\ [25pt]\par
+\tab\tab\\horrule\{0.5pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.4cm"}}{\fldrslt{\ul\cf1\\\\[0.4cm}}}\f0\fs22 ]\par
+\tab\tab\\huge Chapter 1 \\\\ Introduction \\\\\par
+\tab\tab\\horrule\{2pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.5cm"}}{\fldrslt{\ul\cf1\\\\[0.5cm}}}\f0\fs22 ]\par
+\}\par
+\par
+\\date\{\}\par
+%%% Begin document\par
+\\begin\{document\}\par
+\\tableofcontents\par
+\\newpage\par
+\\listoffigures\par
+\\newpage\par
+\\listoftables\par
+\\maketitle\par
+\\newpage\par
+%\\chapter*\{Introduc\}\par
+\par
+\\section\{Introduction\}\par
+\par
+ There are two primary methods in traditional computing for the execution of algorithms.  The first is to use an Application Specific Integrated Circuit (ASIC), to perform the operations in hardware.  Because these ASICs are designed specifically to perform a given computation, they are very fast and efficient when executing the exact computation for which they were designed.  However, the circuit cannot be altered for any other computation.  Microprocessors are a far more flexible solution.  Processors execute a set of instructions to perform a computation.  By changing the software instructions, the functionality of the system is altered without changing the hardware.  However, the downside of this flexibility is that the performance suffers, and is far below that of an ASIC.  The processor must read each instruction from memory, determine its meaning, and only then execute it.  This results in a high execution overhead for each individual operation[1]. \par
+\par
+ Reconfigurable computing (RC) is intended to fill the gap between hardware and software, achieving potentially much higher performance than software, while maintaining a higher level of flexibility than hardware. Typical RC systems yield 10X to 100X improvement in processing speed over conventional CPU-based "software- only" systems [2]. RC systems merge the advantages of ASICs and General purpose processors.Fig.1 represents the attributes of RC computing with respect to Processor and ASIC.  \par
+ \par
+ \\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Flexibility vs  Data-Processing rate\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+\par
+ Partial Reconfiguration (PR) or Run-Time Reconfiguration (RTR) is implemented. It is defined as the ability to modify or change the functional configuration of the device during operation, through either hardware or software changes. PR is based upon the concept of virtual hardware, which is similar to virtual memory. The physical hardware is much smaller than the sum of the resources required by each of the configurations. Therefore, instead of reducing the number of configurations that are mapped, we instead swap them in and out of the actual hardware as they are needed[3]. \par
+ \par
+ Fig.2 gives an overall picture of how the reconfigurable modules are swapped in and out of the reconfigurable partition which will be created during the floorplanning.\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 2 : Partial dynamically reconfigurable architecture \par
+\\end\{center\}\par
+\par
+  To demonstrate the working of partially reconfigurable design a naval application is developed. \par
+  \par
+\\subsection\{Automatic Target Recognition\}\par
+\par
+ Automatic Target Recognition (ATR) is ability of an algorithm or device to recognize the targets based on the data received by the sensors. Target recognition can be done in various ways, namely audio representation of the signal, visual representation of the data etc. Here, the visual representations of the signal i.e. images are used for target recognition. In real-time scenarios, the images from Forward Looking Infrared (FLIR) sensor are used for target recognition. The datasets are generated using MATLAB, Photoshop and Picasa.\par
+ \par
+ In recognition problems, there are two major steps, namely feature extraction and feature classification.\par
+Fig.3 shows the basic block diagram of a target recognition system.\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 3 : A basic block diagram for target recognition \par
+\\end\{center\}\par
+\par
+ Feature extraction is employed when the input data in an application is too large to be processed and is redundant. In this case the input data will be raw pixels. In order to obtain the reduced representation of the initial data, feature extraction is used. Hence, feature extraction is closely related to dimensionality reduction. \par
+ \par
+ Principal Component Analysis is one of the most efficient techniques to achieve dimensionality reduction and get non-redundant representation of a large data. It uses an Information Theory approach wherein the most relevant image information is encoded in a group of images that will best distinguish every image. It transforms the target and clutter images in to a set of basis images, which essentially are the principal components of the images. The Principal Components (or Eigenvectors) basically seek directions in which it is more efficient to represent the data. This is particularly useful for reducing the computational effort.\par
+ \par
+ Such an information theory approach will encode not only the local features but also the global features. When we find the principal components or the Eigenvectors of the image set, each Eigenvector has some contribution from each image used in the training set.\par
+\par
+ Every image in the training set can be represented as a weighted linear combination of these basis matrices. The number of Eigen images that we obtain therefore would be equal to the number of images in the training set. Let that number be M. Some of these Eigen images are more important in encoding the variation in images of the dataset, thus we could also approximate all images using only the K most significant Eigen images.\par
+ \par
+ Classification is done by the 2-class neural network classifier. During the training, the neural network learns the weights and the bias terms from the training data, which will be the feature vectors of every image. There are three layers, namely input layer, hidden layer and output layer.Fig.4 shows the basic architecture of the feedforward Artificial Neural Network (ANN).\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 4 : Basic Architecture of Artificial Neural Network\par
+\\end\{center\}\par
+\par
+The circle in the above figure is the neuron which is the basic building block of a neural network.\par
+ \par
+ The number of neurons can be varied based on recognition problem. The number of neurons in the input layer depends upon the dimension of the feature vector. The number of neurons in the hidden layer can be varied such that desired level of accuracy is achieved. The number of classes decides the number of neurons in the output layer. \par
+\par
+\\subsection\{Motivation\}\par
+ Nowadays, the demands for FPGA-based embedded systems with higher performance in terms of powerful computational ability and fast processing time are rising rapidly.\par
+Latest applications ported to embedded systems (e.g., pattern recognition, scalable video rendering, communication protocols) demand a large computation power, while must respect other critical embedded design constraints, such as, short time-to-market, low energy consumption or reduced implementation size. Increasing number of processors does not always translate to linear speedup because not all portions of the application can be parallelized. Here is where the dynamically loading and unloading modules (PR) at run time can be an alternative over the existing methods.\par
+\par
+ The speed of RC systems is much greater than conventional software systems. Another compelling advantage is reduced energy and power consumption. In a recon\u-1279?gurable system, the circuitry is optimized for the application, such that the power consumption will tend to be much lower than that for a general-purpose processor. Various surveys report that moving critical software loops to recon\u-1279?gurable hardware results in average energy savings of 35\\% to 70\\% with an average speed up of 3 to 7 times, depending on the particular device used. Other advantages of recon\u-1279?gurable computing include a reduction in size and component count (and hence cost), improved time-to-market, and improved \u-1278?exibility and upgradability. These advantages are especially important for embedded applications [4]. \par
+\\newpage\par
+\par
+\\title\{\par
+\tab\tab %\\vspace\{-1in\} \tab\par
+\tab\tab\\usefont\{OT1\}\{bch\}\{b\}\{n\}\par
+\tab\tab %\\normalfont \\normalsize \\textsc\{School of random department names\} \\\\ [25pt]\par
+\tab\tab\\horrule\{0.5pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.4cm"}}{\fldrslt{\ul\cf1\\\\[0.4cm}}}\f0\fs22 ]\par
+\tab\tab\\huge Chapter 2 \\\\ Project Deliverables \\\\\par
+\tab\tab\\horrule\{2pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.5cm"}}{\fldrslt{\ul\cf1\\\\[0.5cm}}}\f0\fs22 ]\par
+\}\par
+\\maketitle\par
+\\newpage\par
+\par
+\\section\{Project Deliverables\}\par
+\\subsection\{Embedded Design of reconfigurable hardware using EDK and Xilinx PlanAhead\}\par
+\\begin\{itemize\}\par
+\tab\\item Design with single memory module and controllers. \par
+    \\item Design with two memory modules connected in parallel to achieve enhanced memory for the software application.\par
+\\end\{itemize\}\par
+\par
+\\subsection\{Implementation of PCA and ANN in MATLAB.\}\par
+\\begin\{itemize\}\par
+\tab\\item The training and testing code written in MATLAB.\par
+    \\item Trained weights and biases are saved in IEEE 754 format to text files.\par
+\\end\{itemize\}\par
+\par
+\\subsection\{Implementation of PCA and ANN in Xilinx C\}\par
+\\begin\{itemize\}\par
+\tab\\item Testing Code is written in Xilinx C using the reconfigurable hardware.\par
+    \\item The accuracy of the results is verified with MATLAB results.\par
+\\end\{itemize\}\par
+\\newpage\par
+\par
+\par
+\\title\{\par
+\tab\tab %\\vspace\{-1in\} \tab\par
+\tab\tab\\usefont\{OT1\}\{bch\}\{b\}\{n\}\par
+\tab\tab %\\normalfont \\normalsize \\textsc\{School of random department names\} \\\\ [25pt]\par
+\tab\tab\\horrule\{0.5pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.4cm"}}{\fldrslt{\ul\cf1\\\\[0.4cm}}}\f0\fs22 ]\par
+\tab\tab\\huge Chapter 3 \\\\ Background \\\\\par
+\tab\tab\\horrule\{2pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.5cm"}}{\fldrslt{\ul\cf1\\\\[0.5cm}}}\f0\fs22 ]\par
+\}\par
+\\maketitle\par
+\\newpage\par
+\par
+\\section\{Background\}\par
+ This chapter begins with a more detailed description of Partial Reconfiguration. The underlying equations in the image processing algorithms are explained in this chapter.\par
+ \par
+\\subsection\{Partial Reconfiguration\}\par
+ Partial Reconfiguration (PR) is modifying a subset of logic in an operating FPGA design by downloading a partial configuration file via Internal Configuration Access Port (ICAP)[1].\par
+ \par
+ FPGA technology provides the flexibility of on-site programming and re-programming without going through re-fabrication with a modified design. PR takes this flexibility one step further, allowing the modification of an FPGA design during run-time by loading a partial configuration file, usually a partial BIT file. After a full BIT file configures the FPGA, partial BIT files can be downloaded to modify reconfigurable regions in the FPGA without compromising the integrity of the applications running on those parts of the device that are not being reconfigured.\par
+ \par
+ Figure 5 illustrates the premise behind Partial Reconfiguration.\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 5 : Basic Premise of  Partial Reconfiguration\par
+\\end\{center\}\par
+\par
+ As shown, the function implemented in Reconfig Block A is modified by downloading one of several partial BIT files, A1.bit, A2.bit, A3.bit, or A4.bit. The logic in the FPGA design is divided into two different types, reconfigurable logic and static logic. The gray area of the FPGA block represents static logic and the block portion which is labeled Reconfig Block \ldblquote A\rdblquote  represents reconfigurable logic.\par
+ \par
+ The static logic remains functioning and is completely unaffected by the loading of a partial BIT file. The reconfigurable logic is replaced by the contents of the partial BIT file.\par
+ \par
+ The basic premise of Partial Reconfiguration is that the FPGA hardware resources can be time-multiplexed similar to the ability of a microprocessor to switch tasks. Because the FPGA device is switching tasks in hardware, it has the benefit of both flexibility of a software implementation and the performance of a hardware implementation.\par
+\par
+ There are many reasons why the ability to time multiplex hardware dynamically on a single FPGA device is advantageous. \par
+ These include: \par
+ \par
+\\begin\{itemize\}\par
+\tab\\item Reducing the size of the FPGA device required to implement a given function, with consequent reductions in cost and power consumption. \par
+    \\item Providing flexibility in the choices of algorithms or protocols available to an application \f1\bullet  Enabling new techniques in design security.\par
+    \\item Improving FPGA fault tolerance.\par
+    \\item Accelerating configurable computing.\par
+\\end\{itemize\}\par
+\par
+\par
+\\subsection\{Principle Component Analysis\}\par
+ In order to implement target recognition, PCA[1]. is used for feature extraction. The algorithm can be enumerated as follows,\par
+ \par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 1 : Image\par
+\\end\{center\}\par
+\\newpage\par
+\par
+\\newpage\par
+\par
+\\subsection\{Artificial Neural Network\}\par
+ After obtaining the features of the images, they are classified using an ANN[2.]. Neural networks are typically organized in layers. Layers are made up of a number of interconnected 'nodes' which contain an 'activation function'. Patterns are presented to the network via the 'input layer', which communicates to one or more 'hidden layers' where the actual processing is done via a system of weighted 'connections'. The hidden layers then link to an 'output layer' where the answer is output.\par
+ \par
+ Most ANNs contain some form of \lquote learning rule\rquote  which modifies the weights of the connections according to the input patterns that it is presented with. We make use of \lquote delta rule\rquote  for backwards propagation of errors. With the delta rule, as with other types of backpropagation, 'learning' is a supervised process that occurs with each cycle or 'epoch' (i.e. each time the network is presented with a new input pattern) through a forward activation flow of outputs, and the backwards error propagation of weight adjustments. In other words, when a neural network is initially presented with a pattern it makes a random guess as to what it might be.\par
+ \par
+ It then sees how far its answer was from the actual one and makes an appropriate adjustment to its connection weights. Also, within each hidden layer node is a hyperbolic tangent (tanh) activation function which polarizes network activity, adds non-linearity to the inputs and helps it to stabilize. Backpropagation performs a gradient descent within the solution's vector space towards a 'global minimum' along the steepest vector of the error surface. The global minimum is that theoretical solution with the lowest possible error.\par
+Learning Rate is multiplied by the error and then weights are updated. Learning rate helps the network to overcome obstacles (local minima) in the error surface and settle down at or near the global minimum.\par
+\par
+ Once a neural network is 'trained' to a satisfactory level it may be used as an analytical tool on other data. To do this, the user no longer specifies any training runs and instead allows the network to work in forward propagation mode only. New inputs are presented to the input pattern where they filter into and are processed by the middle layers as though training were taking place, however, at this point the output is retained and no back propagation occurs. The output of a forward propagation run is the predicted model for the data which can then be used for further analysis and interpretation.\par
+\par
+The brief steps for implementation of a feed forward ANN are as follows:\par
+\\begin\{itemize\}\par
+\tab\\item The weights are randomly initialized which will prevent the network to be stuck in local minima while updating weights.\par
+\tab\\item During forward propagation through a network, the output (activation) of a given node is a function of its inputs. The inputs to a node, which are simply the products of the output of preceding nodes with their associated weights, are summed and then passed through an activation function before being sent out from the node. \par
+    <<formula>>\par
+ where  Sj  is the sum of all relevant products of weights and outputs from the previous layer i, wij represents the relevant weights connecting layer i with layer j, ai represents the activations of the nodes in the previous layer i, aj is the activation of the node at hand, and f is the activation function.\par
+ \par
+ In this application case tanh function is used as an activation function. \par
+\tab\\item The error function is commonly given as the sum of the squares of the differences between all target and actual node activations for the output layer. For a particular training pattern (i.e., training case), error is thus given by  \par
+\tab\par
+    <<formula>>\par
+    \par
+ where Ep is total error over the training pattern, \f2\'bd is a value applied to simplify the function\rquote s derivative, n represents all output nodes for a given training pattern, tjn represents the target value for node n in output layer j, and ajn represents the actual activation for the same node.\par
+ \par
+ Error over an entire set of training patterns (i.e., over one iteration, or epoch) is calculated by summing all Ep is given by \par
+\par
+\tab <<formula>>\par
+   \par
+where E is total error, and p represents all training patterns. \par
+\tab\\item Gradient descent learning uses this error function for the modification of weights along the most direct path in weight-space to minimize error, change applied to a given weight is proportional to the negative of the derivative of the error with respect to that weight. The negative of the derivative of the error function is required in order to perform gradient descent learning.\par
+    \\item Backpropagation Algorithm is used to update the weights between input layer and hidden layer as well as weights between hidden layer and output layer.\par
+\tab\\item By using the chain rule,\par
+\par
+\tab <<formula>>\par
+   \par
+ where, \'80 is the learning rate. A higher value for \'80 will necessarily result in a greater magnitude of change. Because each weight update can reduce error only slightly, many iterations are required in order to satisfactorily minimize error. \par
+ \par
+ \tab <<formula>>\par
+    \par
+\'80 is the learning rate.\par
+Backpropagation and updating of weights is done over large epochs and the error almost approaches zero. When the error in the network is negligibly small, then the network is said to have learnt the pattern from the training set.\par
+Once the neural network is trained, the weight matrix will be saved. Given a test image, recognition will be done using the weights and biases learnt during training.\par
+The following is done during testing,\par
+\tab\\begin\{itemize\}\par
+\tab\tab\\item During testing, only forward propagation is implemented. The following equations are implemented.\par
+ \tab\tab\\item Based on the magnitude of the final result, the classification is done.\par
+\tab\\end\{itemize\}\par
+    \par
+\\end\{itemize\}\par
+\par
+\\subsection\{Literature Survey\}\par
+\\paragraph\{[1] Manhwee Jo, V.K.Prasad Arava, Hoonmo Yang and Kiyoung Choi, \ldblquote Implementation of Floating-Point Operations for 3D Graphics on a Coarse-Grained Reconfigurable Architecture\rdblquote\}\par
+ \par
+ In this paper the author presents how we can perform various floating-point operations on a coarse grained reconfigurable array of integer processing elements. They also demonstrate the effectiveness of their approach through the implementation of various floating-point operations for 3D graphics and give a glimpse on the performance analysis as well. The basic idea is the use of multiple Processing Elements in the array to perform single floating point operation. In order to achieve this, they propose a method to extend the design of each Processing Element without a significant increase in cost. \par
+  \par
+\\paragraph\{E.Manikandan and K.A.Karthigeyan, \ldblquote Design of Parallel Vector/Scalar Floating Point Co-Processor For Reconfigurable Architecture\rdblquote\}\par
+ \par
+ In the existing FPGA soft processor systems, we make use of dedicated hardware modules to speed up parallel applications. In this paper the authors explain about the alternative approach of using a soft vector processor as a general purpose accelerator. To achieve this an autonomous Floating Point Vector Co-processor (FPVC) is implemented that works independently in an embedded system. This is a four stage RISC pipeline that supports single-precision and 32-bit integer arithmetic operations. They also show that FPVC is easier to implement at the cost of decrease in performance compared to the custom data path. \par
+ \par
+\\paragraph\{Ali Azarian and Mahmood Ahmadi, \ldblquote Reconfigurable Computing Architecture\rdblquote\}\par
+   \par
+ In this survey, the authors give us a glimpse of an overview of programming logics and Configurable Logic Block (CLB) and Look Up Table (LUT) as logic elements. They also introduce us to reconfigurable computing models like static and dynamic, single and multi-context and partial reconfiguration architectures. Ali and Mahmood define Reconfigurable Computing as the process of changing the structure of a reconfigurable device at star-uptime respectively at run-time and involves the use of reconfigurable devices, such as Field Programmable Gate Arrays (FPGAs), for computing purposes. Later in their work, they explain the principle involved in Static and Dynamic Reconfiguration. The Static one involves one time configuration followed by multiple execution, but the Dynamic one involves reconfiguration after an execution cycle as well. They also gave a basic idea of Look Up Table Computation and the need for dedicated Computational Blocks an described common interconnect strategies.\par
+\par
+\\paragraph\{Pierre Baldi and Kurt Hornik, \ldblquote Neural Networks and Principal Component Analysis: Learning from Examples without Local Minima\rdblquote\}\par
+\par
+ Considering the problem of learning from examples in layered linear feed-forward neural networks using optimization methods such as Back propagation algorithm, the author shows that there is a unique minimum corresponding to the projection onto the subspace generated by the first principal vectors of a covariance matrix associated with the training patterns. Neural networks can be viewed as circuits of highly interconnected units with modifiable interconnection weights. They can be classified, for instance, according to their architecture, algorithm for adjusting the weights, and the type of units used in the circuit. The network consists of n input units, p hidden units and n output units. In addition to its simplicity, error back-propagation can be applied to nonlinear networks and to a variety of problems without having any detailed a priori knowledge of their structure or of the mathematical properties of the optimal solutions. \par
+\par
+\\newpage\par
+\\title\{\par
+\tab\tab %\\vspace\{-1in\} \tab\par
+\tab\tab\\usefont\{OT1\}\{bch\}\{b\}\{n\}\par
+\tab\tab %\\normalfont \\normalsize \\textsc\{School of random department names\} \\\\ [25pt]\par
+\tab\tab\\horrule\{0.5pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.4cm"}}{\fldrslt{\ul\cf1\\\\[0.4cm}}}\f2\fs22 ]\par
+\tab\tab\\huge Chapter 4 \\\\ Hardware Architecture \\\\\par
+\tab\tab\\horrule\{2pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.5cm"}}{\fldrslt{\ul\cf1\\\\[0.5cm}}}\f2\fs22 ]\par
+\}\par
+\\maketitle\par
+\\newpage\par
+\par
+\\section\{Hardware Architecture\}\par
+ \par
+ This chapter describes the hardware architecture which is designed to implement the target recognition algorithms. The hardware cores and peripherals which form a part of the design are explained in detail.\par
+ \par
+ The feature extraction and classification algorithms are run on XC5VFX70T . The FPGA belongs to the Virtex-5 family.\par
+\par
+ Xilinx Platform Studio (XPS) is used to configure and build the hardware specification of the embedded system.It provides an integrated environment for creating the software and hardware specification flows for an Embedded Processor system. It also provides a graphical system editor for connection of processors, peripherals and buses.\par
+\par
+\\subsection\{Hardware modules of the embedded design\}\par
+\\subsubsection\{Processor\}\par
+The FPGA board supports two microprocessors. They are Microblaze (soft-core microprocessor) and PowerPC(hard-core embedded microprocessor).\par
+\par
+ We have used MicroBlaze[2] in this embedded application, since we tailor our project to specific needs (i.e.: Flash, UART, General Purpose Input/Output peripherals and etc.). As a soft-core processor, MicroBlaze is implemented entirely in the general-purpose memory and logic fabric of Xilinx FPGAs.The Micro Blaze processor is a 32-bit Harvard Reduced Instruction Set Computer (RISC) architecture optimized for implementation in Xilinx FPGAs with separate 32-bit instruction and data buses running at full speed to execute programs and access data from both on-chip and external memory at the same time. MicroBlaze is a load/store type of processor; it can only load/store data from/to memory. It cannot do any operations on data in memory directly; instead the data in memory must be brought inside the MicroBlaze processor and placed into the general-purpose registers to do any operations.\par
+\par
+\\subsubsection\{Primary I/O Bus\}\par
+Processor Local Bus (PLB)[2] is the I/O bus which is used in the design. The Xilinx 128-bit PLB provides bus infrastructure for connecting an optional number of PLB masters and slaves into an overall PLB system. In this design there are 2 PLB hosts and 5 PLB slaves.\par
+\par
+\\subsubsection\{Memory Module\}\par
+Block Random Access Memory (BRAM) is used to store the instructions, data .The stack and heap memory is The BRAM Block[3] is a configurable memory module which attaches to a variety of BRAM Interface Controllers. Both Port A and Port B of the memory block can be connected to independent BRAM Interface Controllers: LMB (Local Memory Bus), PLB (Processor Local Bus), and OCM (On-Chip Memory).\par
+\par
+ The size of the Memory module depends upon the size of the BRAM interface controllers attached to the Port A and Port B of the BRAM. Local memory size is 64KB in this design. The default size of the controllers are 64KB.We have increased the size of the controllers to 128KB so that memory is sufficient for the code, data, heap and stack. Thus, 128KB of total memory is available.\par
+\par
+ The default stack and heap sizes are 1KB each. Since operations are performed on an image, a larger heap will be required. Also, a large number of function calls will be required to perform pixel-by-pixel operation. In order to accommodate all the requirements the heap and stack sizes are increased to 16KB each.\par
+\par
+\\subsubsection\{BRAM Interface Controllers\}\par
+The LMB BRAM Interface Controller[4] is the interface between the LMB and the bram\\_block peripheral. There are two interface controllers connected to the Port A and Port B of the BRAM block. PORT A is connected to Instruction Local Memory Bus (ILMB) Interface controller. PORT B is connected to Data Local Memory Bus (DLMB) Interface controller. Both the controllers are PLB masters.\par
+\par
+\\subsubsection\{Local Memory Bus\}\par
+ LMB[5.] is used as an interconnect for Xilinx FPGA-based embedded processor systems. The LMB is a fast, local bus for connecting the MicroBlaze processor instruction and data ports to high-speed peripherals, primarily on-chip BRAM. Since the microprocessor has a Harvard Architecture there are separate buses for data and instructions.ILMB is an interconnect between ILMB interface controller and bram block.DLMB is an interconnect between DLMB interface controller and bram block. The width of both the buses is 32 bits. It is a single master bus.\par
+ \par
+\\subsubsection\{Debugger\}\par
+ Microblaze Debug Module (MDM)[6.] enables JTAG-based debugging of one or more microblaze processors. JTAG specifies the use of a dedicated debug port implementing a serial communications interface without requiring direct external access to the system address and data buses. MDM supports debugging upto 8 microblaze processors.\par
+\par
+ MDM is a slave and hence is connected to Slave Processor Local Bus (SPLB).\par
+\par
+\\subsubsection\{Communication Peripheral\}\par
+RS232-UART (Universal Asynchronous Receiver Transmitter) is used for Serial Communication. XPS-UART Lite Interface[7.] connects to the PLB and provides controller interface for Asynchronous data transfer. It supports 8 bit interfaces. It has configurable baud rate. The baud rate of 115200 is used. XPS-UART Lite performs parallel to serial conversion on characters received through PLB and serial to parallel conversion on characters received on the serial peripheral. It supports full-duplex communication. The peripheral acts a slave. Therefore, it is connected to SPLB.\par
+\par
+\\subsubsection\{Flash Memory Controller\}\par
+The XPS System ACE Interface Controller (XPS SYSACE)[8.] is the interface between the PLB and the microprocessor Interface (MPU) of the System ACE Compact Flash solution peripheral. It is connected as a 32-bit Slave on PLB buses. Flash memory is used to store the partial bit files, system.ace file, text files which contain the test image, Eigen images for feature extraction, weight matrix for neural network.\par
+\par
+\\subsubsection\{XPS HWICAP Controller\}\par
+The XPS HWICAP (Hardware ICAP) IP [9.]enables an embedded microprocessor to read and write the FPGA configuration memory through the Internal Configuration Access Port (ICAP) at run time. Using ICAP we can write software programs for an embedded processor that modifies the circuit structure and functionality during the circuit's operation. The XPS HWICAP includes support for resource reading and modification of the CLB LUTs and Flip-Flops. The XPS HWICAP controller provides the interface necessary to transfer bit streams to and from the ICAP. It is connected to SPLB as it is a slave.\par
+\par
+\\subsubsection\{User-Defined Peripheral\}\par
+\par
+There is one user-defined peripheral where instantiation of a module is done without netlist, inputs and outputs of the reconfigurable module are declared. Since there are six inputs to the reconfigurable module, six software accessible registers are used. The peripheral is connected to SPLB.Once the peripheral is generated, it is imported to the XPS design later.\par
+\par
+ After adding all the required IPs to the XPS design, the design is synthesized and netlist is generated .This is a top-level netlist(.ngc file) which is an input to the Xilinx PlanAhead tool.The XPS also generates User Constraints File(.ucf ) and Block Memory map(.bmm) for the application. NGC files are specific netlist files which contain both logical design data and constraints. It is a translation of the VHDL/ Verilog design file into gates optimized for the target architecture. UCF files are used for timing, placement and pinout constraints.\par
+ \par
+ BMM file is a text file that has syntactic descriptions of how individual block RAMs constitutes a contiguous logical data space.\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=2]\{1.png\}\par
+        \\includegraphics[scale=1]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 6 : Hardware embedded design block diagram of the application\par
+\\end\{center\}\par
+\\newpage\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Fig.7: Bus Interfaces in the application\par
+\\end\{center\}\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 8: Address Map for hardware modules\par
+\\end\{center\}\par
+\par
+In this hardware design the upper bound on stack and heap is 16KB.If the user attempts to increase it further, then the instructions and data no longer occupy contiguous sections and therefore an executable is not created. For a highly computationally intensive algorithm, user might require a higher stack and heap sizes. To enable it, the hardware design is modified accordingly.\par
+ The following amendments are made to the previous embedded design :\par
+ \par
+\\begin\{enumerate\}\par
+\tab\\item Along with the previous BRAM block one more BRAM block of 128KB is added to the design. Hence, we get to use 256 KB of memory. Now 128KB of BRAM is used to store code and data. Another 128KB BRAM block is used for the stack and heap memory. The stack and heap memory is 32 KB size each which caters running of a computationally expensive algorithm on the FPGA.\par
+\par
+\tab\\item The BRAM interface controllers (DLMB controller and ILMB controller) are added to the design. Port connections of the BRAM block have to be made accordingly.\par
+\par
+\tab\\item Bus interfaces for the controllers are ILMB and DLMB buses respectively.\par
+\par
+\tab\\item Address Memory Map is modified and addresses are generated for the hardware modules.\par
+\par
+\\end\{enumerate\}\par
+ \par
+ Now, the design has two BRAM modules in parallel as shown in Fig 9.\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 9: Block Diagram with two memory modules and interface controllers\par
+\\end\{center\}\par
+\par
+\\subsection\{Reconfigurable Modules(RMs)\}\par
+There are two reconfigurable modules in the design which are used to implement the computations involved in the algorithms. The arithmetic operations which are performed during the testing session are performed by these reconfigurable modules based on which partial bit stream is loaded on to the reconfigurable partition created during the Floorplanning in Xilinx PlanAhead Tool.\par
+\par
+ The first RM performs single precision add-fused multiplication and the second RM performs double precision add-fused multiplication.\par
+Single Precision multiplier takes 2 32 bit  inputs and  gives another 32 bit number as an output. Double Precision multiplier takes 2 64 bit inputs and gives another 64 bit number as an output.\par
+\par
+ The format of a single precision number is as shown in Fig 10.\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=0.75]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 10: IEEE 754 Single Precision Format\par
+\\end\{center\}\par
+\par
+ During single precision multiplication, the sign bits of both the inputs are XORed.The exponent 8 bits (with bias of 127 added) of both the inputs are added and mantissa is multiplied. Bias is added to restrict the numbers from -127 to 127 between 0 to 255 so that the exponent can be represented as an 8 bit unsigned number. While interpretation of the results the bias terms should be subtracted to get the correct decimal representation of the number.\par
+\par
+ The format of a double precision number is as shown in Fig 11\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=0.75]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 11: IEEE 754 Double Precision Format\par
+\\end\{center\}\par
+\par
+ Similar operations are performed for a double precision multiplier except for a different bias value which is 1023 to make sure that the exponent value can be represented as an unsigned 11 bit number.The block diagram of the reconfigurable module is shown in Fig 12.\par
+\par
+\\begin\{center\}\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=0.75]\{1.png\}\par
+\tab\tab\\newline\par
+\tab\tab\\centering\par
+\tab\tab Figure 12: Block Diagram of Reconfigurable Module\par
+\\end\{center\}\par
+ Based on RM which is loaded into the reconfigurable region the width of the inputs vary. If Single precision partial bitstream is loaded, then the inputs are 32 bits wide and vice-versa.\par
+ \par
+ The operation performed by the RMs is :\par
+ \par
+\\begin\{center\}\par
+<<formula>>\par
+\\end\{center\}\par
+\par
+ The general purpose registers in MicroBlaze processor are 32 bit wide. Therefore operation can be performed only at 32 bit data at once. The 64 bit input data is split into two 32 bit data and given as input to the RMs.\par
+So, the bifurcation is done as follows, \\newline\par
+\par
+\\begin\{table\}[ht]\par
+\\centering\par
+\\begin\{tabular\}\{ |l|c|c| \} \par
+\tab\\hline\par
+\tab Operands & Single Precision & Double Precision \\\\\par
+\tab\\hline \par
+\tab First operand & A[31:0] & A[31:0] \\\\\par
+\tab\\hline \par
+\tab Second operand & 0 & A[63:32] \\\\\par
+\tab\\hline \par
+\tab Third operand & B[31:0] & B[31:0] \\\\\par
+\tab\\hline \par
+\tab Fourth operand & 0 & B[63:32] \\\\\par
+\tab\\hline \par
+\tab Fifth operand & C[31:0] & C[31:0] \\\\\par
+    \\hline\par
+\tab Sixth operand & 0 & C[63:32] \\\\\par
+\tab\\hline\par
+\\end\{tabular\}\par
+\\caption\{Inputs to the Reconfigurable Modules\}\par
+\\end\{table\}\par
+\par
+ Addition, Subtraction and Multiplication can be performed by the RMs.The values of the operands have to be so adjusted that the desired operation is performed by the module.\par
+ \par
+ Table 2 lists the values of the operands to perform the desired operation by a single precision RM.\\newline\par
+ \par
+\\begin\{table\}[ht]\par
+\\centering\par
+\\begin\{tabular\}\{ |l|c|c|c| \} \par
+\tab\\hline\par
+\tab\\textbf\{Operands\} & Addition & Subtraction & Multiplication\\\\\par
+\tab\\hline \par
+\tab First operand & A[31:0] & A[31:0] & 0\\\\\par
+\tab\\hline \par
+\tab Second operand & 0 & 0 & 0\\\\\par
+\tab\\hline \par
+\tab Third operand & B[31:0] & B[31:0] & B[31:0]\\\\\par
+\tab\\hline \par
+\tab Fourth operand & 0 & 0 & 0\\\\\par
+\tab\\hline \par
+\tab Fifth operand & 3F800000 & 3F800000 & C[31:0]\\\\\par
+    \\hline\par
+\tab Sixth operand & 0 & 0 & 0 \\\\\par
+\tab\\hline\par
+\\end\{tabular\}\par
+\\caption\{Values of operands for various operations to a single precision RM\}\par
+\\end\{table\}\par
+\par
+\\begin\{table\}[ht]\par
+\\centering\par
+\\begin\{tabular\}\{ |l|c|c|c| \} \par
+\tab\\hline\par
+\tab Operands & Addition & Subtraction & Multiplication\\\\\par
+\tab\\hline \par
+\tab First operand & A[31:0] & A[31:0] & 0\\\\\par
+\tab\\hline \par
+\tab Second operand & A[32:64] & A[32:64] & 0\\\\\par
+\tab\\hline \par
+\tab Third operand & B[31:0] & B[31:0] & B[31:0]\\\\\par
+\tab\\hline \par
+\tab Fourth operand & B[32:64] & B[32:64] & B[32:64]\\\\\par
+\tab\\hline \par
+\tab Fifth operand & 00000000 & 00000000 & C[31:0]\\\\\par
+    \\hline\par
+\tab Sixth operand & 3FF00000 & 3FF00000 & C[32:64] \\\\\par
+\tab\\hline\par
+\\end\{tabular\}\par
+\\caption\{Values of operands for various operations to a double precision RM\}\par
+\\end\{table\}\par
+\par
+ The modules are written in Verilog. The Verilog code is synthesized and .ngc files are generated for both the modules which is the netlist to the user defined peripheral which was added in the XPS.\\newline\par
+\par
+\\subsection\{Xilinx PlanAhead\}\par
+ \par
+ Xilinx PlanAhead 12.4 is a tool for:\par
+\\begin\{itemize\}\par
+\tab\\item I/O pin planning\par
+\tab\\item Floorplan Area/Logic/IO\par
+\tab\\item Analyse Timing/Floorplan Design \par
+\tab\\item Run DRC\par
+\tab\\item The input to the tool will be .ngc file and .bmm file of the top level module.\par
+\tab\\item The output will be the full and partial bitstreams of the design.\par
+\\end\{itemize\}\par
+\par
+\\textbf\{Brief Procedure\}\par
+\\begin\{enumerate\}\par
+\tab\\item A new PlanAhead with PR enabled has to be created.\par
+\tab\\item The .ngc file which is generated by the XPS will be the input to the Xilinx PlanAhead. This  top-level .ngc file will have a module which  includes the inputs and outputs for reconfigurable modules and all other hardware modules which were added in the XPS.\par
+\tab\\item A reconfigurable partition is created and the two reconfigurable modules, namely single and double precision add-fused multipliers added along with their netlists.\par
+\tab\\item A reconfigurable partition will be created on left half side of the board. Only Slices will be selected as the modules don\rquote t require DSP slices and BRAM memory.\par
+\tab\\item For memory mapping, the .bmm file path will be given and double precision module is run first .The static and partial logic both are mapped, placed and routed.\par
+\tab\\item For the other module static logic is imported from the double module and partial logic is implemented .Later ,single module is mapped, placed and routed.\par
+\tab\\item The partial and full bit files are generated .\par
+\tab\\item The download.bit file is generated by giving the path of the .bmm file, executable file and bit file of double module using data2mem.\par
+\tab\\item The system.ace file is generated which will be loaded onto the FPGA which contains the download.bit file and JTAG settings.\\newpage\par
+\\end\{enumerate\}\par
+\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=3]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Overview of the Partial Reconfiguration Software Flow\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+\par
+ The top gray box represents the synthesis of HDL source to netlists for each module. The appropriate netlists are implemented in each design to generate the full and partial BIT files for that configuration. The static logic from the first implementation is shared among all subsequent design implementations[5].\par
+\par
+\\newpage\par
+ Fig.14 shows the reconfigurable partition created during Floorplanning.\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=3]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Reconfigurable Partition\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+\\newpage\par
+\par
+ Fig.14 shows the reconfigurable partition created during Floorplanning.\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Zoomed Version of slice\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+\par
+ Fig.14 shows the reconfigurable partition created during Floorplanning.\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Screenshot of Xilinx PlanAhead Tool\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+\par
+\\newpage\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Hardware flow of the project\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+ \par
+ The Xilinx Platform studio is used for selecting the type of processor, type of interconnect system, memory modules, type of controllers, communication peripherals, etc. The wrapper function for all the modules is provided by XPS which is later used in PlanAhead for checking the area and timing constraints. Once the top-level module is generated,PlanAhead is used for mapping, place and route of the design. Bitstream generation is done. SDK is launched ,all required libraries are included. The stack and heap sizes are changed as per requirement. Finally an .elf file is generated for the Xilinx C code. Finally the partial bit files and system.ace file is loaded to the Flash memory. Output is tested on the hyperterminal.\par
+\\newpage\par
+\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{System Block Diagram\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+ In the system block diagram, the .ngc files of the single and double precision modules which are the reconfigurable modules,the top level .ngc file(obtained from XPS) are given as an input to the PlanAhead. Executable is generated from the software which is written in Xilinx C. By making use of the hardware specified by the PlanAhead and the executable generated by the SDK system.ace file is generated. Once the bit files and system.ace files are loaded to the FPGA.,the dynamic logic keeps changing based on which partial bit is loaded via ICAP whereas the static logic keeps functioning throughout the program. Debugging and testing is done via UART on the HyperTerminal. In case of errors, the changes are made in the software and the process is repeated until the desired output is obtained.\par
+\\newpage\par
+\par
+\par
+\\title\{\par
+\tab\tab %\\vspace\{-1in\} \tab\par
+\tab\tab\\usefont\{OT1\}\{bch\}\{b\}\{n\}\par
+\tab\tab %\\normalfont \\normalsize \\textsc\{School of random department names\} \\\\ [25pt]\par
+\tab\tab\\horrule\{0.5pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.4cm"}}{\fldrslt{\ul\cf1\\\\[0.4cm}}}\f2\fs22 ]\par
+\tab\tab\\huge Chapter 5 \\\\ Software Design and Results \\\\\par
+\tab\tab\\horrule\{2pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.5cm"}}{\fldrslt{\ul\cf1\\\\[0.5cm}}}\f2\fs22 ]\par
+\}\par
+\\maketitle\par
+\\newpage\par
+\par
+\\section\{Software Design and Results\}\par
+\\subsection\{Training dataset and test dataset\}\par
+\par
+ The images are assumed to be taken from Forward Looking Infra-red (FLIR) sensor. The dataset is generated using Photoshop and Picasa by applying appropriate filters to a RGB image. The size of the training set is 200 with 100 images belonging to each class namely, clutter and target. The test set has some 30 images.\par
+ \par
+ Fig.19 shows the sample target and clutter image which are used in for target recognition.\par
+\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Sample Target and Clutter Image\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+ \par
+ In order to prevail over the memory constraints of the hardware the image resolution is chosen to be 20 X 20.Before doing any computation on the pixel values, the images will be resized to 20 X 20.\par
+ \par
+\\subsection\{Training\}\par
+\par
+ Training is done using MATLAB. The feature extraction is done on the training set and the required results are stored into a text file which will be used during the test session. The mean and standard deviation of the PCA feature is noted. Every feature vector is normalized accordingly.\par
+\par
+ The neural network is trained using the feature vectors. The weights are stored in the text file which is used during testing scenario.\par
+ \par
+ Fig.20 shows the block diagram of feature extraction using PCA for training dataset.\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Feature Extraction using PCA for training\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+\par
+ The above figure is the block diagram of feature extraction which is implemented in MATLAB.\par
+ The following results are stored into Flash memory for testing:\par
+\\begin\{itemize\}\par
+\tab\\item Test Image\par
+\tab\\item Mean Image of the training set\par
+\tab\\item Eigen Images\par
+\\end\{itemize\}\par
+\par
+ The reconfigurable modules assume the input to be in IEEE 754 hexadecimal format. Therefore the input to the reconfigurable modules is converted from decimal format to IEEE 754 hexadecimal format. The feature extraction process deals with pixel-by-pixel computations. In order to make the calculations more efficient single precision arithmetic is employed. The inputs are converted into single precision format and single precision RM is loaded. The inputs are passed to the single precision RM according to Table 2.\par
+Fig.21 shows the block diagram for pre-processing of inputs to the single precision RM.\par
+\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=0.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Pre-processing of the test image\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+\par
+ Similarly, the mean image is converted into IEEE hexadecimal format and saved into a file. The Eigen images are also converted into the same desired format and saved into a separate file which will be used later.\par
+\par
+ The mean and standard deviation of the feature vectors is found and noted down which will be used during testing.\par
+\par
+ Once the feature vectors are obtained and desired results are stored into a file, classification is done using feedforward artificial neural network. Fig.22 depicts the overall block diagram of classification process during training.\par
+\par
+ \par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=0.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Training the neural network for classification\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\}\par
+  \par
+ In order to achieve better accuracy without the loss in the performance, double precision arithmetic is employed for classification. Therefore, the weight matrix is converted into IEEE double precision format and stored into a file. After  training , there will be four .txt files with \par
+ \par
+\\subsection\{Testing\}\par
+Fig.23 shows the block diagram for feature extraction of a test image on the board.\par
+ \par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=0.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Feature Extraction on board\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\} \par
+ \par
+ The subtraction and the projection of the image onto eigen space is done by the Single precision RM.\par
+\par
+ The single precision partial bit file will be loaded beforehand .Later the operations are performed.\par
+ \par
+Fig.24 depicts the classification of test image on the board.\par
+\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=0.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Classification of test image on board.\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\} \par
+ \par
+ The matrix multiplication which is carried out between the various layers of the neural network performed by double precision RM and every input being in IEEE double precision format. The inputs to the double precision RM is passed according to Table 3.\par
+The decimal output which is either positive or negative is displayed on the HyperTerminal. If the output is positive then it is target or vice-versa.\par
+\par
+ The testing is done on board as well as MATLAB so that the test results shown by the board can be validated.\par
+ \par
+ There are possibilities of memory bloating where the results are corrupt therefore a proper balance has to be maintained between the stack and heap variables so that the program uses the allocated stack and heap memory efficiently.\par
+\par
+\\subsection\{Pseudo Code\}\par
+\par
+\\begin\{itemize\}\par
+\tab\\item Include all the Xilinx specific header files for input/output.\par
+\tab\\item Include the header files for ICAP\par
+\tab\\item Include the header files for flash memory\par
+\tab\\item Include the header files for UART communication \par
+\tab\\item Include basic math header files\par
+\tab\\item Initialize the Flash card interface controller and ICAP device\par
+\tab\\item Load the single precision bit file\par
+\tab\\item Read the test image and mean image\par
+\tab\\item Subtract the mean image from test image\par
+\tab\\item Multiply the Eigen images with the difference such that feature vector is obtained\par
+\tab\\item Convert the single precision feature vector into double precision \par
+\tab\\item Reset the reconfigurable region and load the double partial bit\par
+\tab\\item Normalize the feature vector by subtracting mean and dividing by standard deviation\par
+\tab\\item Read the weight matrix from the flash card\par
+\tab\\item Perform matrix multiplication of the feature vector with input-hidden layer weight matrix \par
+\tab\\item Convert the matrix into decimal number\par
+\tab\\item Pass it as an argument to hyperbolic tangent\par
+\tab\\item Perform matrix multiplication of the result with hidden-output layer weight matrix \par
+\tab\\item Based on the magnitude of the final output, take the decision.\par
+\\end\{itemize\}\par
+\par
+\\subsection\{Results\}\par
+\par
+ The variables during training are saved into .mat file which is later loaded during testing.\par
+Fig.25 shows a screenshot of MATLAB Command line where feature extraction is performed on three test images and is classified accordingly.\par
+\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1.5]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Testing in MATLAB\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\} \par
+ \par
+ Fig.26 shows a screenshot of the HyperTerminal where the same test images are classified.\par
+\par
+\\begin\{figure\}[htp]\par
+\tab\tab\\centering\par
+\tab\tab\\includegraphics[scale=1]\{1.png\}\par
+\tab\tab %\\newline\par
+\tab\tab\\centering\par
+\tab\tab\\caption\{Testing on Board\} \par
+        %\\label\{Figure 1\}\par
+\\end\{figure\} \par
+\par
+ Test results from MATLAB and board go well in hand with each other. Since there is no support for printing double numbers on the board, the final predicted output is scaled by 100, converted into an integer and then displayed.\par
+\par
+ Therefore, if the predicted result is close to 100 then the image is classified as target and if it is found close -100 then it classified as clutter.\par
+\par
+\\newpage\par
+\par
+\par
+\\title\{\par
+\tab\tab %\\vspace\{-1in\} \tab\par
+\tab\tab\\usefont\{OT1\}\{bch\}\{b\}\{n\}\par
+\tab\tab %\\normalfont \\normalsize \\textsc\{School of random department names\} \\\\ [25pt]\par
+\tab\tab\\horrule\{0.5pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.4cm"}}{\fldrslt{\ul\cf1\\\\[0.4cm}}}\f2\fs22 ]\par
+\tab\tab\\huge Chapter 6 \\\\ Conclusion and Future Work \\\\\par
+\tab\tab\\horrule\{2pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.5cm"}}{\fldrslt{\ul\cf1\\\\[0.5cm}}}\f2\fs22 ]\par
+\}\par
+\\maketitle\par
+\\newpage\par
+\par
+\\section\{Conclusion and Future Work\}\par
+\\subsection\{Conclusions\}\par
+ In this project a partially reconfigurable hardware with two different architectures is proposed. Target Recognition for naval applications is implemented on the reconfigurable hardware.\par
+Huge improvement in processing speed over software implementation is achieved. Minimal amount of hardware resources are utilized. The area/gate utilization of the FPGA is small thus reduces the hardware resources needed.\par
+\par
+ The training was done on MATLAB and the testing was done on the FPGA.The functional correctness of the design was verified by using MATLAB.\par
+\par
+ Therefore, due to reprogram ability of FPGAs, the proposed architecture possessed the speed of hardware while retaining the flexibility of a software Implementation.\par
+\par
+\\subsection\{Future Work\}\par
+\par
+ This design has a single FPU .The architecture can be multi-FPU which increases the performance of the design .Pipelining can be implemented with a multi-FPU architecture. The proposed design implements PCA for feature extraction and ANN for classification .In future, other feature extraction and classification algorithms can be implemented. For achieving a better accuracy and to build a reliable system the decision can made be by combining the results of more than one recognition algorithms.\par
+ \par
+\\newpage\par
+\par
+\\title\{\par
+\tab\tab %\\vspace\{-1in\} \tab\par
+\tab\tab\\usefont\{OT1\}\{bch\}\{b\}\{n\}\par
+\tab\tab %\\normalfont \\normalsize \\textsc\{School of random department names\} \\\\ [25pt]\par
+\tab\tab\\horrule\{0.5pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.4cm"}}{\fldrslt{\ul\cf1\\\\[0.4cm}}}\f2\fs22 ]\par
+\tab\tab\\huge Bibliography \\\\\par
+\tab\tab\\horrule\{2pt\} {\field{\*\fldinst{HYPERLINK "\\\\\\\\[0.5cm"}}{\fldrslt{\ul\cf1\\\\[0.5cm}}}\f2\fs22 ]\par
+\}\par
+\\maketitle\par
+\\newpage\par
+\par
+ \par
+ \par
+\\newpage\par
+\\begin\{align\} \par
+\tab\\begin\{split\}\par
+\tab (x+y)^3 \tab &= (x+y)^2(x+y)\\\\\par
+\tab\tab\tab\tab\tab &=(x^2+2xy+y^2)(x+y)\\\\\par
+\tab\tab\tab\tab\tab &=(x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3)\\\\\par
+\tab\tab\tab\tab\tab &=x^3+3x^2y+3xy^2+y^3\par
+\tab\\end\{split\}\tab\tab\tab\tab\tab\par
+\\end\{align\}\par
+Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies \par
+\par
+\\subsection\{Heading on level 2 (subsection)\}\par
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. \par
+\\begin\{align\}\par
+\tab A = \par
+\tab\\begin\{bmatrix\}\par
+\tab A_\{11\} & A_\{21\} \\\\\par
+  \tab A_\{21\} & A_\{22\}\par
+\tab\\end\{bmatrix\}\par
+\\end\{align\}\par
+Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\par
+\par
+\\subsubsection\{Heading on level 3 (subsubsection)\}\par
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.\par
+\par
+\\paragraph\{Heading on level 4 (paragraph)\}\par
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. \par
+\par
+\par
+\\section\{Lists\}\par
+\\subsection\{Example for list (3*itemize)\}\par
+\\begin\{itemize\}\par
+\tab\\item First item in a list \par
+\tab\tab\\begin\{itemize\}\par
+\tab\tab\\item First item in a list \par
+\tab\tab\tab\\begin\{itemize\}\par
+\tab\tab\tab\\item First item in a list \par
+\tab\tab\tab\\item Second item in a list \par
+\tab\tab\tab\\end\{itemize\}\par
+\tab\tab\\item Second item in a list \par
+\tab\tab\\end\{itemize\}\par
+\tab\\item Second item in a list \par
+\\end\{itemize\}\par
+\par
+\\subsection\{Example for list (enumerate)\}\par
+\\begin\{enumerate\}\par
+\tab\\item First item in a list \par
+\tab\\item Second item in a list \par
+\tab\\item Third item in a list\par
+\\end\{enumerate\}\par
+\par
+\par
+\\begin\{center\}\par
+%\\centering\par
+\\begin\{tabular\}\{ |l|c|c| \} \par
+\tab\\hline\par
+\tab Operands & Single Precision & Double Precision \\\\\par
+\tab\\hline \par
+\tab First operand & A[31:0] & A[31:0] \\\\\par
+\tab\\hline \par
+\tab Second operand & 0 & A[63:32] \\\\\par
+\tab\\hline \par
+\tab Third operand & B[31:0] & B[31:0] \\\\\par
+\tab\\hline \par
+\tab Fourth operand & 0 & B[63:32] \\\\\par
+\tab\\hline \par
+\tab Fifth operand & C[31:0] & C[31:0] \\\\\par
+    \\hline\par
+\tab Sixth operand & 0 & C[63:32] \\\\\par
+\tab\\hline\par
+\\end\{tabular\}\par
+\\centering \\newline \\newline\par
+Table 1 : Inputs to the Reconfigurable Modules\par
+\\end\{center\}\par
+\par
+\par
+\\begin\{table\}[h!]\par
+\\centering\par
+\\begin\{tabular\}\{||c c c c||\} \par
+ \\hline\par
+ Col1 & Col2 & Col2 & Col3 \\\\ [0.5ex] \par
+ \\hline\\hline\par
+ 1 & 6 & 87837 & 787 \\\\ \par
+ 2 & 7 & 78 & 5415 \\\\\par
+ 3 & 545 & 778 & 7507 \\\\\par
+ 4 & 545 & 18744 & 7560 \\\\\par
+ 5 & 88 & 788 & 6344 \\\\ [1ex] \par
+ \\hline\par
+\\end\{tabular\}\par
+\\caption\{Table to test captions and labels\}\par
+\\label\{table:1\}\par
+\\end\{table\}\par
+\par
+\par
+\par
+%%% End document\par
+\\end\{document\}\f0\par
+}
+ 
